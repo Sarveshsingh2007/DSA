@@ -17,10 +17,19 @@ int main(){
     cout<<endl;
 
     int b[10];
-    for(int i=0;i<10;i++){
-        b[i]= i*i;  // given values to all the index in the array
+    for(int i=1;i<10;i++){
+        b[i]= i+i;  // given values to all the index in the array
         cout<<b[i]<<" ";
     }
+    cout<<endl;
+
+    // int a[]; wrong way 
+
+    int c;
+    cout<<sizeof(c)<<endl;
+
+    int d[10] = {1,2,3};
+    cout<<sizeof(d);
 
     return 0;
 }   
