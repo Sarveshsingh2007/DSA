@@ -21,13 +21,18 @@ int main(){
     cout<<endl;
 
     int largest = INT_MIN;
+    int smallest = INT_MAX;
     for(int i=0;i<n;i++){
         if(a[i]> largest){
             largest = a[i];
         }
+        if(a[i]< smallest){
+            smallest = a[i];
+        }
     }
     
-    cout<<"Largest number in the array is: "<<largest;
+    cout<<"Largest number in the array is: "<<largest<<endl;
+    cout<<"Smallest number in the array is: "<<smallest;
 
     return 0;
 }
