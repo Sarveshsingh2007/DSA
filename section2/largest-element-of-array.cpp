@@ -20,6 +20,11 @@ int main(){
     }
     cout<<endl;
 
+    // another case 
+    // int largest = a[0];
+    // int smallest = a[0]; // this will search smallest from 0 index;
+    // for (int i=1;i<n;i++)
+
     int largest = INT_MIN;
     int smallest = INT_MAX;
     for(int i=0;i<n;i++){
