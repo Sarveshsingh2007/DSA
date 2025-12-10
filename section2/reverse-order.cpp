@@ -14,13 +14,13 @@ int main(){
     }
     cout<<endl;
 
-    cout<<"Original Array: ";
+    cout<<"Original: ";
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
 
-    cout<<"Reverse Array: ";
+    cout<<"Reverse: ";
     for(int i=n-1;i>=0;i--){
         cout<<arr[i]<<" ";
     }
