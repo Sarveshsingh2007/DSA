@@ -10,7 +10,11 @@ class Student{
         }
         // parameterized constructor
         Student(int a){
-            age = a;
+            age = a; // we can not write age = age // we have to use this keyword-> holds the address of current object.
+        }
+        Student(int a, int r){
+            age=a;
+            roll_no=r;
         }
         int roll_no;
         void display(){
