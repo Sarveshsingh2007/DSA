@@ -26,7 +26,15 @@ int main() {
     cout << "Roll no of student 2 is: " << s2->roll_no << endl;
     cout << "Age of student 2 is: " << s2->age << endl;
 
+    cout<<endl;
+
     delete s2; // free dynamically allocated memory
+
+    
+    // using function display() 
+    Student s3;
+    s3.display();
+
 
     return 0;
 }
