@@ -14,4 +14,8 @@ public:
         cout<<"id is: "<<id<<endl;
         cout<<"age is: "<<age<<endl;
     }
+
+    ~Employee(){
+        cout<<"Destructor called"<<endl;
+    }
 };
