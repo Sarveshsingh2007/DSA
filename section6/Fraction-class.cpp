@@ -29,6 +29,13 @@ class Fraction{
             simplify();
         }
 
+        void productFraction(Fraction const &f2) {
+        numerator = numerator * f2.numerator;
+        denominator = denominator * f2.denominator;
+
+        simplify();   
+    }
+
         void simplify(){
             int gcd = 1;
             int j = min(abs(numerator), abs(denominator));
@@ -46,12 +53,24 @@ class Fraction{
 int main(){
     Fraction f1(10,2);
     Fraction f2(5,4);
+    Fraction f3(10,20);
+
     cout<<"Fraction 1: ";
     f1.display();
+
     cout<<"Fraction 2: ";
     f2.display();
+
+    cout<<"Fraction 3: ";
+    f3.display();
+
     f1.addFraction(f2);
-    cout<<"After Addition: ";
+    cout<<"Addition of Fraction 1 and 2: ";
     f1.display();
+
+    f3.productFraction(f2);
+    cout<<"Multiplication of Fraction 2 and 3: ";
+    f3.display();
+
     return 0;
 }
