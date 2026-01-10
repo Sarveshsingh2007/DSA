@@ -12,7 +12,7 @@ int main(){
     Student s3(20, 1);
     s3.display();
 
-    Student s4(s3);
+    Student s4(s3);0
     s4.display();
 
     Student s5;
