@@ -34,9 +34,20 @@ bool isSorted2(int a[], int n){
     }
 }
 
+bool isSorted3(int a[], int n){
+    if(n==0 || n==1) return true;
+
+    if(a[n-2]>a[n-1]){
+        return false;
+    }
+    return isSorted(a, n-1);
+
+
+}
+
 int main(){
     int a[] = {1,2,3,4,5};
-    if(isSorted(a,5)) {
+    if(isSorted3(a,5)) {
         cout<<"Sorted"<<endl;
     }else{
         cout<<"Not Sorted"<<endl;
