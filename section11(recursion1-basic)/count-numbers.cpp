@@ -7,7 +7,8 @@ int count(int n){
 
     // recursive case
     int a = count(n/10);
-
+    
+    // calculation
     return a+1;
 }
 
