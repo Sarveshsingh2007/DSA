@@ -2,13 +2,13 @@
 using namespace std;
 
 void replaceChar(char input[]){
-    if(input[0] == '\0') return;
+    if(input[0] == '\0') return; // base case
 
     if(input[0] == 'a'){
         input[0] = 'x';
     }
 
-    replaceChar(input + 1);
+    replaceChar(input + 1);  // recursion 
 }
 
 int main(){
