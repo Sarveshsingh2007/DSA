@@ -2,6 +2,7 @@
 using namespace std;
 
 void printPermutation(char a[], int i = 0){
+// base case 
     if(a[i] == '\0'){
         cout << a << endl;
         return;
