@@ -45,3 +45,19 @@ int main(){
     }
     return 0;
 }
+/*
+1. Divide the Array
+Split the given array into two equal halves.
+
+2. Keep Dividing Recursively
+Continue dividing each half until each subarray contains only one element.
+
+3. Single Elements Are Sorted
+An array with one element is already considered sorted.
+
+4. Merge Two Sorted Subarrays
+Compare elements from both halves and merge them in sorted order.
+
+5. Repeat Merging Until Complete
+Keep merging subarrays step-by-step until the entire array becomes sorted.
+*/
