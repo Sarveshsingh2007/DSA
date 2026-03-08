@@ -19,6 +19,7 @@ int main(){
     n1.next = &n2;
     cout<<n1.data<<" "<<n2.data<<endl;
     Node *head = &n1;
+    cout<<"Head Element: ";
     cout<<head->data<<endl;
 
     return 0;
