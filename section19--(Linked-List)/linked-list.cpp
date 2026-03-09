@@ -12,15 +12,48 @@ class Node{
         }
 };
 
+void print(Node * head){
+    /*
+    Node *temp = head;
+    while(temp != NULL){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+    temp = head;
+    while(temp != NULL){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+        */
+    
+    while(head != NULL){
+        cout<<head->data<<"->";
+        head = head->next;
+    }
+    cout<<" NULL";
+};
+
 int main(){
     // static object
     Node n1(20);
-    Node n2(30);
-    n1.next = &n2;
-    cout<<n1.data<<" "<<n2.data<<endl;
     Node *head = &n1;
-    cout<<"Head Element: ";
-    cout<<head->data<<endl;
+    Node n2(30);
+    Node n3(40);
+    Node n4(50);
+    Node n5(60);
+
+    n1.next = &n2;
+    n2.next = &n3;
+    n3.next = &n4;
+    n4.next = &n5;
+
+    print(head);
+
+
+    // Dynamically creating object
+    // Node *n3 = 30;
+    // Node *n4 = 40;
+    // n3->next = n4;
 
     return 0;
 }
