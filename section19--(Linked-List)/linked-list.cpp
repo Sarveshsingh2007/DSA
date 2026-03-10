@@ -12,7 +12,7 @@ class Node{
         }
 };
 
-void print(Node * head){
+void print(Node * head){  // function for printing
     /*
     Node *temp = head;
     while(temp != NULL){
