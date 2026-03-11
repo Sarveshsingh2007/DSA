@@ -25,10 +25,10 @@ void print(Node * head){  // function for printing
         temp = temp->next;
     }
         */
-    
-    while(head != NULL){
-        cout<<head->data<<"->";
-        head = head->next;
+    Node *temp = head;
+    while(temp != NULL){
+        cout<<temp->data<<"->";
+        temp = temp->next;
     }
     cout<<" NULL";
 };
