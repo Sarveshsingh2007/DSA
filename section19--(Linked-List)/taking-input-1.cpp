@@ -12,7 +12,7 @@ class Node{
     }
 };
 
-void print(Node *head){
+void print(Node *head){   // print function
     Node *temp = head;
     while(temp != NULL){
         cout<<temp->data<<"->";
