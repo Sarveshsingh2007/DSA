@@ -72,7 +72,7 @@ Node* takeInput(){
 
 }
 
-int main(){
+int main(){. // main function 
    Node *head = takeInput(); 
    int i,data;
    cin>>i>>data;
