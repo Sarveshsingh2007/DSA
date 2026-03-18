@@ -21,7 +21,6 @@ void print(Node *head){
     cout<<"NULL"<<endl;
 }
 
-
 Node* insertAtithPos(Node *head, int i, int data){
       if(i<0){
         return head;
