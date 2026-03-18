@@ -44,12 +44,36 @@ Node* insertAtithPos(Node *head, int i, int data){
     return copyhead;
 }
 
-Node* deleteNode(Node* head, int i){
+// Node* deleteNode(Node* head, int i){
+//    if(i<0){
+//       return head;
+//    }
+//    if(i==0 && head){
+//     return head->next;
+//    }
+
+//    Node* curr = head;
+//    int count = 1;
+//    while(count<=i-1 && curr!=NULL){
+//     curr = curr->next;
+//     count++;
+//    }
+//    if(curr && curr->next){
+//     curr->next = curr->next->next;
+//     return head;
+//    }
+//    return head;
+// }
+
+Node* deleteithNode(Node* head, int i){
    if(i<0){
       return head;
    }
    if(i==0 && head){
-    return head->next;
+    Node* newHead = head->next;
+    head->next = NULL;
+    delete head;
+    return newHead;
    }
 
    Node* curr = head;
@@ -59,8 +83,11 @@ Node* deleteNode(Node* head, int i){
     count++;
    }
    if(curr && curr->next){
-    curr->next = curr->next->next;
-    return head;
+     Node *temp = curr->next;
+     curr->next = curr->next->next;
+     temp->next=NULL;
+     delete temp;
+     return head;
    }
    return head;
 }
