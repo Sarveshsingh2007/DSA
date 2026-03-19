@@ -65,7 +65,7 @@ Node* insertAtithPos(Node *head, int i, int data){
 //    return head;
 // }
 
-Node* deleteithNode(Node* head, int i){
+Node* deleteithNode(Node* head, int i){  // without leak
    if(i<0){
       return head;
    }
