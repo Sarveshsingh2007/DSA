@@ -25,8 +25,9 @@ int length(Node *head){
     if(head == NULL) return 0;
     return 1 + length(head->next);
 }
-*/    
+    */  
 
+// SEARCH ELEMENT IN LINKED LIST
 bool isPresent(Node *head, int data){
     Node *curr = head;
     while(curr!=NULL){
@@ -36,6 +37,13 @@ bool isPresent(Node *head, int data){
         curr = curr->next;
     }
     return false;
+}
+
+// SEARCH ELEMENT IN LINKED LIST USING RECURSION
+bool findElement(Node *head, int data){
+    if(head == NULL) return false;
+    if(head->data == data) return true;
+    return isPresent(head->next, data);
 }
 
 Node* takeInput(){
@@ -71,6 +79,14 @@ int main(){
     }else{
         cout<<"Not Found";
     }
+    cout<<endl;
+
+    if(findElement(head, data)){
+        cout<<"Found";
+    }else{
+        cout<<"Not Found";
+    }
+
 
     return 0;
 }
