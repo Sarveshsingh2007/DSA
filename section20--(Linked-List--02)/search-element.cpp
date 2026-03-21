@@ -74,7 +74,7 @@ int main(){
 
     int data;
     cin>>data;
-    if(isPresent(head, data)){
+    if(isPresent(head, data)){  // without recursion
         cout<<"Found";
     }else{
         cout<<"Not Found";
