@@ -12,6 +12,7 @@ public:
         this->data = data;
     }
 };
+
 // Printing Tree
 void printTree(TreeNode<int>* root){
     if(root==NULL) return;
@@ -26,13 +27,32 @@ void printTree(TreeNode<int>* root){
     }
 }
 
-int main(){
-    TreeNode<int>* root = new TreeNode<int>(1);
-    TreeNode<int>* node1 = new TreeNode<int>(2);
-    TreeNode<int>* node2 = new TreeNode<int>(3);
+// Take Input
+TreeNode<int>* takeInput(){
+    int rootData;
+    cout<<"Enter data: ";
+    cin>>rootData;
+    TreeNode<int>* root = new TreeNode<int>(rootData);
 
-    root->children.push_back(node1);
-    root->children.push_back(node2);
+    int n;
+    cout<<"Enter nums of children of "<<rootData<<": ";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        TreeNode<int>* child = takeInput();
+        root->children.push_back(child);
+    }
+    return root;
+}
+
+int main(){
+    // TreeNode<int>* root = new TreeNode<int>(1);
+    // TreeNode<int>* node1 = new TreeNode<int>(2);
+    // TreeNode<int>* node2 = new TreeNode<int>(3);
+
+    // root->children.push_back(node1);
+    // root->children.push_back(node2);
+
+    TreeNode<int>* root = takeInput();
 
     printTree(root);
     return 0;
