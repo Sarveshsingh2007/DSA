@@ -70,9 +70,9 @@ int main() {
     inorder(root);
 
     if(isValidBST(root, LLONG_MIN, LLONG_MAX)) {
-        cout << "\nValid BST";
+        cout << "\nValid BST.";
     } else {
-        cout << "\nNot a BST";
+        cout << "\nNot a BST.";
     }
 
     return 0;
