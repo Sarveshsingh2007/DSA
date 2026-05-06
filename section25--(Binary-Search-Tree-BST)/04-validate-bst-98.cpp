@@ -1,4 +1,5 @@
 #include<iostream>
+#include<climits>
 using namespace std;
 
 template<typename T>
@@ -41,19 +42,14 @@ void inorder(BTNode<T>* root) {
     inorder(root->right);
 }
 
-// Range Sum in BST (Optimized)
-template<typename T>
-int rangeSumBST(BTNode<T>* root, int low, int high) {
-    if(root == NULL) return 0;
-    if(root->data >= low && root->data <= high){
-        return root->data
-             + rangeSumBST(root->left, low, high)
-             + rangeSumBST(root->right, low, high);
-    }
-    if(root->data > high){
-        return rangeSumBST(root->left, low, high);
-    }
-    return rangeSumBST(root->right, low, high);
+// Validate BST
+bool isValidBST(BTNode<int>* root, long long minVal, long long maxVal) {
+    if(root == NULL) return true;
+
+    if(root->data <= minVal || root->data >= maxVal) return false;
+
+    return isValidBST(root->left, minVal, root->data) &&
+           isValidBST(root->right, root->data, maxVal);
 }
 
 int main() {
@@ -72,11 +68,12 @@ int main() {
 
     cout << "\nInorder Traversal (Sorted BST): ";
     inorder(root);
-    int low, high;
-    cout << "\nEnter range (low high): ";
-    cin >> low >> high;
 
-    cout << "Range Sum: " << rangeSumBST(root, low, high);
+    if(isValidBST(root, LLONG_MIN, LLONG_MAX)) {
+        cout << "\nValid BST";
+    } else {
+        cout << "\nNot a BST";
+    }
 
     return 0;
 }
