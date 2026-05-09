@@ -120,16 +120,16 @@ int main(){
 
     cout << "\nSearching 7: ";
     if(b.hasData(7)){
-        cout << "Found ✅";
+        cout << "Found ";
     } else {
-        cout << "Not Found ❌";
+        cout << "Not Found ";
     }
 
     cout << "\nSearching 15: ";
     if(b.hasData(15)){
-        cout << "Found ✅";
+        cout << "Found ";
     } else {
-        cout << "Not Found ❌";
+        cout << "Not Found ";
     }
 
     return 0;
