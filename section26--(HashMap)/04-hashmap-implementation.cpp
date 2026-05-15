@@ -1,4 +1,4 @@
-    #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 template<typename V>
@@ -37,6 +37,32 @@ class mymap{
                 base = base%numBuckets;
            }
            return hashcode%numBuckets;
+       }
+
+       void rehash(){
+          MapNode<V>** temp = buckets;
+          buckets = new MapNode<V>*[2*numBuckets];
+          for(int i=0;i<2*numBuckets;i++){
+            buckets[i] = NULL;
+          }
+          int oldBucketSize = numBuckets;
+          numBuckets *= 2;
+          count = 0;
+
+          for(int i=0;i<oldBucketSize;i++){
+             MapNode<V>* head = temp[i];
+             while(head!=NULL){
+                string key = head->key;
+                V value = head->value;
+                insert(key,value);
+                head = head->next;
+             }
+          }
+
+          for(int i=0;i<oldBucketSize;i++){
+            delete temp[i];
+          }
+          delete []temp;
        }
    public:
     mymap(){
@@ -84,9 +110,13 @@ class mymap{
       node->next = buckets[bucketIndex];
       buckets[bucketIndex] = node;
       count++;
+      double loadFactor = (1.0*count)/numBuckets;
+      if(loadFactor > 0.7){
+        rehash();
+      }
     }
 
-V remove(string key){
+    V remove(string key){
         int bucketIndex = getBucketIndex(key);
         MapNode<V>* head = buckets[bucketIndex];
         MapNode<V>* prev = NULL;
@@ -103,14 +133,38 @@ V remove(string key){
                 count--;
                 return value;
             }
-            
+
             prev = head;
             head = head->next;
         }
         return 0;
     }
+    double getLoadFactor(){
+       return (1.0*count)/numBuckets;
+    }
 };
 int main(){
 
+    mymap<int> ourmap;
+    for(int i=0;i<10;i++){
+        char c = '0' + i;
+        string key = "abc";
+        key = key + c;
+        int value = i + 1;
+        ourmap.insert(key,value);
+        cout<<ourmap.getLoadFactor()<<endl;
+    }
+    cout<<ourmap.size()<<endl;
+
+    ourmap.remove("abc1");
+    ourmap.remove("abc6");
+
+    for(int i=0;i<10;i++){
+        char c = '0' + i;
+        string key = "abc";
+        key = key + c;
+        cout<<key<<" "<<ourmap.getValue(key)<<endl;
+    }
+     cout<<ourmap.size()<<endl;
   return 0;
 }
