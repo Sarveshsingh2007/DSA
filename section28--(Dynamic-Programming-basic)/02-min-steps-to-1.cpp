@@ -46,11 +46,31 @@ int minSteps2(int n){
     return helper(n,ans);
 }
 
+int minSteps3(int n){
+    int *dp = new int[n+1];
+    dp[0] = 0;
+    dp[1] = 0;
+    
+    for(int i=2;i<=n;i++){
+        dp[i] = dp[i-1] + 1;
+        if(i%2==0){
+            dp[i] = min(dp[i], dp[i/2] + 1);
+        }
+        if(i%3==0){
+            dp[i] = min(dp[i], dp[i/3] + 1);
+        }
+    }
+    int ans = dp[n];
+    delete []dp;
+    return dp[n];
+}
+
 int main(){
     int n;
     cout<<"Enter value of n: ";
     cin>>n;
     cout<<"Minimum Steps Brute Force: "<<minSteps(n)<<endl;
     cout<<"Minimum Steps Memoization: "<<minSteps2(n)<<endl;
+    cout<<"Minimum Steps bottom up method: "<<minSteps3(n)<<endl;
     return 0;
 }
