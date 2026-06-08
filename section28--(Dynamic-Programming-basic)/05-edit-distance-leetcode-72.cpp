@@ -9,7 +9,7 @@ int minDistance(string s1, string s2) {
 
     vector<vector<int>> dp(m + 1, vector<int>(n + 1));
 
-    for(int i = 0; i <= m; i++) {
+    for(int i = 0; i <= m; i++) 
         for(int j = 0; j <= n; j++) {
 
             if(i == 0) {
