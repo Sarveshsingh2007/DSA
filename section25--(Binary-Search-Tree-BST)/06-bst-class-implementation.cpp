@@ -21,25 +21,25 @@ public:
 };
 class BST{
     BTNode<int>* root;
-
+// Print Tree Data 
     void printTree(BTNode<int>* root){
-   if(root==NULL){   /// base case
-    return;
-   }
+        if(root==NULL){   /// base case
+            return;
+    }
+    cout<<root->data<<": ";
+    if(root->left!=NULL){
+        cout<<"L-"<<root->left->data<<" ";
+    }
+    if(root->right!=NULL){
+        cout<<"R-"<<root->right->data;
+    }
+    cout<<endl;
 
-   cout<<root->data<<": ";
-   if(root->left!=NULL){
-    cout<<"L"<<root->left->data;
-   }
-
-   if(root->right!=NULL){
-    cout<<"R"<<root->right->data;
-   }
-   cout<<endl;
-
-   printTree(root->left);
-   printTree(root->right);
+    printTree(root->left);
+    printTree(root->right);
 }
+
+// Tree Having Data or Not
     bool hasData(BTNode<int>* node, int data){
         if(node==NULL){
             return false;
@@ -47,14 +47,13 @@ class BST{
         if(node->data == data){
             return true;
         }
-
         if(node->data > data){
             return hasData(node->left, data);
         }else{
            return hasData(node->right, data);
         }
     }
-
+// Insert Data 
     BTNode<int>* insert(BTNode<int>* node, int data){
         if(node == NULL){
             BTNode<int> *n = new BTNode<int>(data);
@@ -67,7 +66,7 @@ class BST{
         }
         return node;
     }
-
+// Delete Data
      BTNode<int>* deleteData(BTNode<int>* node, int data){
         if(node == NULL){
             return NULL;
@@ -157,5 +156,5 @@ int main(){
     b.deleteData(20);
     cout<<endl;
     b.print();
-   return 0;
+    return 0;
 }
